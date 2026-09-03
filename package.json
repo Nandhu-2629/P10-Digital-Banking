@@ -1,0 +1,29 @@
+{
+  "name": "digital-banking-account-transaction-management-system",
+  "version": "1.0.0",
+  "description": "CIA-3 P10 Digital Banking Account & Transaction Management System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "check": "node --check server.js && node --check config/db.js && node --check middleware/auth.js && node --check middleware/validate.js && node --check middleware/errorHandler.js && node --check models/User.js && node --check models/Account.js && node --check models/Beneficiary.js && node --check models/Transaction.js && node --check models/Approval.js && node --check controllers/authController.js && node --check controllers/accountController.js && node --check controllers/beneficiaryController.js && node --check controllers/transactionController.js && node --check controllers/staffController.js && node --check controllers/jobController.js",
+    "seed:staff": "node scripts/seedStaff.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.0",
+    "morgan": "^1.10.0",
+    "node-cron": "^4.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
