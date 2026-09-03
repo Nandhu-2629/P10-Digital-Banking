@@ -1,44 +1,12 @@
 {
   "info": {
+    "_postman_id": "9543db8e-d3ac-48f1-9f22-c10acfc83ee0",
     "name": "P10 - Digital Banking Account & Transaction Management",
-    "_postman_id": "p10-digital-banking-cia3",
     "description": "Postman collection for all implemented P10 endpoints. Set baseUrl, customerToken, staffToken, accountId, beneficiaryAccountNumber, and beneficiaryId variables.",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57515005",
+    "_collection_link": "https://go.postman.co/collection/57515005-9543db8e-d3ac-48f1-9f22-c10acfc83ee0?source=collection_link"
   },
-  "variable": [
-    {
-      "key": "baseUrl",
-      "value": "http://localhost:5000"
-    },
-    {
-      "key": "customerToken",
-      "value": ""
-    },
-    {
-      "key": "staffToken",
-      "value": ""
-    },
-    {
-      "key": "accountId",
-      "value": ""
-    },
-    {
-      "key": "accountNumber",
-      "value": ""
-    },
-    {
-      "key": "beneficiaryAccountNumber",
-      "value": ""
-    },
-    {
-      "key": "beneficiaryId",
-      "value": ""
-    },
-    {
-      "key": "transferAmount",
-      "value": "1000"
-    }
-  ],
   "item": [
     {
       "name": "1. Register Customer",
@@ -50,6 +18,15 @@
             "value": "application/json"
           }
         ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Demo Customer\",\n  \"email\": \"beneficiary1@example.com\",\n  \"password\": \"Password123!\",\n  \"accountType\": \"savings\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
           "raw": "{{baseUrl}}/api/auth/register",
           "host": [
@@ -60,12 +37,9 @@
             "auth",
             "register"
           ]
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"Demo Customer\",\n  \"email\": \"customer@example.com\",\n  \"password\": \"Password123!\",\n  \"accountType\": \"savings\"\n}"
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "2. Login Customer",
@@ -77,6 +51,15 @@
             "value": "application/json"
           }
         ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"customer4@example.com\",\n  \"password\": \"Password123!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
           "raw": "{{baseUrl}}/api/auth/login",
           "host": [
@@ -87,16 +70,23 @@
             "auth",
             "login"
           ]
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"email\": \"customer@example.com\",\n  \"password\": \"Password123!\"\n}"
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "3. Customer Profile",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{customerToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [
           {
@@ -115,7 +105,8 @@
             "me"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "4. Staff Login",
@@ -127,6 +118,15 @@
             "value": "application/json"
           }
         ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"staff@example.com\",\n  \"password\": \"Password123!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
           "raw": "{{baseUrl}}/api/auth/login",
           "host": [
@@ -137,12 +137,9 @@
             "auth",
             "login"
           ]
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"email\": \"staff@example.com\",\n  \"password\": \"Password123!\"\n}"
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "5. Staff Dashboard",
@@ -165,11 +162,22 @@
             "dashboard"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "6. Pending Approvals",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{staffToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [
           {
@@ -188,11 +196,22 @@
             "pending-approvals"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "7. Approve Account",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{staffToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "PUT",
         "header": [
           {
@@ -204,6 +223,15 @@
             "value": "application/json"
           }
         ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Approved\",\n  \"remarks\": \"KYC documents reviewed and confirmed\"\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
         "url": {
           "raw": "{{baseUrl}}/api/accounts/{{accountId}}/approve",
           "host": [
@@ -215,16 +243,23 @@
             "{{accountId}}",
             "approve"
           ]
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"status\": \"Approved\",\n  \"remarks\": \"KYC documents reviewed and confirmed\"\n}"
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "8. My Accounts",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{customerToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [
           {
@@ -242,7 +277,8 @@
             "accounts"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "9. Account Details",
@@ -265,11 +301,22 @@
             "{{accountId}}"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "10. Deposit Demo Funds",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{customerToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "POST",
         "header": [
           {
@@ -281,6 +328,15 @@
             "value": "application/json"
           }
         ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"accountId\": \"6a991eb8015030c34ad2b5d9\",\n  \"amount\": 10000\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
         "url": {
           "raw": "{{baseUrl}}/api/transactions/deposit",
           "host": [
@@ -291,16 +347,23 @@
             "transactions",
             "deposit"
           ]
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"accountId\": \"{{accountId}}\",\n  \"amount\": 10000\n}"
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "11. Add Beneficiary",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{customerToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "POST",
         "header": [
           {
@@ -312,6 +375,15 @@
             "value": "application/json"
           }
         ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"accountId\": \"{{accountId}}\",\n  \"beneficiaryAccountNumber\": \"{{beneficiaryAccountNumber}}\",\n  \"nickname\": \"Demo Beneficiary\"\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
         "url": {
           "raw": "{{baseUrl}}/api/beneficiaries",
           "host": [
@@ -321,16 +393,23 @@
             "api",
             "beneficiaries"
           ]
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"accountId\": \"{{accountId}}\",\n  \"beneficiaryAccountNumber\": \"{{beneficiaryAccountNumber}}\",\n  \"nickname\": \"Demo Beneficiary\"\n}"
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "12. List Beneficiaries",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{customerToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [
           {
@@ -349,11 +428,22 @@
             "{{accountId}}"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "13. Transfer Funds",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{customerToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "POST",
         "header": [
           {
@@ -365,6 +455,15 @@
             "value": "application/json"
           }
         ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fromAccountId\": \"{{accountId}}\",\n  \"toAccountNumber\": \"{{beneficiaryAccountNumber}}\",\n  \"amount\": \"{{transferAmount}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
           "raw": "{{baseUrl}}/api/transactions/transfer",
           "host": [
@@ -375,16 +474,16 @@
             "transactions",
             "transfer"
           ]
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"fromAccountId\": \"{{accountId}}\",\n  \"toAccountNumber\": \"{{beneficiaryAccountNumber}}\",\n  \"amount\": \"{{transferAmount}}\"\n}"
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "14. Transaction Ledger",
       "request": {
+        "auth": {
+          "type": "bearer"
+        },
         "method": "GET",
         "header": [
           {
@@ -403,11 +502,15 @@
             "{{accountId}}"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "15. Account Statement",
       "request": {
+        "auth": {
+          "type": "bearer"
+        },
         "method": "GET",
         "header": [
           {
@@ -424,14 +527,35 @@
             "api",
             "accounts",
             "{{accountId}}",
-            "statement?from=2026-01-01&to=2026-12-31"
+            "statement"
+          ],
+          "query": [
+            {
+              "key": "from",
+              "value": "2026-01-01"
+            },
+            {
+              "key": "to",
+              "value": "2026-12-31"
+            }
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "16. Flagged Transactions",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{staffToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [
           {
@@ -450,11 +574,22 @@
             "flagged-transactions"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "17. Freeze Account",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{staffToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "PUT",
         "header": [
           {
@@ -474,11 +609,22 @@
             "freeze"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "18. Unfreeze Account",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{staffToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "PUT",
         "header": [
           {
@@ -498,11 +644,22 @@
             "unfreeze"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "19. Run Interest Job",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{staffToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "POST",
         "header": [
           {
@@ -521,11 +678,22 @@
             "interest"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "20. Delete Beneficiary",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{customerToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "DELETE",
         "header": [
           {
@@ -544,11 +712,22 @@
             "{{beneficiaryId}}"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "21. Validation Failure",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{customerToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "POST",
         "header": [
           {
@@ -560,6 +739,15 @@
             "value": "application/json"
           }
         ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fromAccountId\": \"not-an-id\",\n  \"toAccountNumber\": \"\",\n  \"amount\": -1\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
         "url": {
           "raw": "{{baseUrl}}/api/transactions/transfer",
           "host": [
@@ -570,12 +758,9 @@
             "transactions",
             "transfer"
           ]
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"fromAccountId\": \"not-an-id\",\n  \"toAccountNumber\": \"\",\n  \"amount\": -1\n}"
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "22. Unauthorized Request",
@@ -593,7 +778,42 @@
             "dashboard"
           ]
         }
-      }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "staffToken",
+      "secret": true
+    },
+    {
+      "key": "accountId",
+      "value": ""
+    },
+    {
+      "key": "accountNumber",
+      "value": ""
+    },
+    {
+      "key": "beneficiaryAccountNumber",
+      "value": ""
+    },
+    {
+      "key": "beneficiaryId",
+      "value": ""
+    },
+    {
+      "key": "transferAmount",
+      "value": "1000"
+    },
+    {
+      "key": "customerToken",
+      "secret": true
     }
   ]
 }
