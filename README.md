@@ -335,3 +335,6 @@ TRANSACTION ──> ACCOUNT (relatedAccount, optional)
 - Use meaningful commits from multiple team members.
 - Add Postman output screenshots and code/output screenshots to the PDF and PPT.
 - The CIA-3 instructions require a minimum 7-page PDF and a 10–15 slide PPT.
+## GitHub Repository
+
+https://github.com/Nandhu-2629/P10-Digital-Banking
