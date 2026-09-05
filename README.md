@@ -11,14 +11,25 @@ staff monitoring features.
 
 ---
 
+## Team Details
+
+| S.No | Name | Register No. | Department | Section |
+|---:|---|---:|---|:---:|
+| 1 | NANDHITHA SRI V | 2462118 | 5BT CS (AIML) | B |
+| 2 | NEVITA SHARON Y | 2462121 | 5BT CS (AIML) | B |
+| 3 | PAVANA MX | 2462178 | 5BT CS (AIML) | B |
+| 4 | PRAJWAL S HANGARAGI | 2462125 | 5BT CS (AIML) | B |
+
+---
+
 ## Team Member Contributions
 
-| S.No |       Name          | Register No. |   Department  | Section | Contribution   |
-|------|---------------------|--------------|---------------|---------|
-|  1   |   NANDHITHA SRI V   |   2462118    | 5BT CS (AIML) |     B   |  Authentication, customer onboarding, account management, and project coordination. |
-|  2   |   NEVITA SHARON Y   |   2462121    | 5BT CS (AIML) |     B   | Beneficiary management, fund transfers, transaction ledger, and API testing. |
-|  3   |     PAVANA MX       |   2462178    | 5BT CS (AIML) |     B   |  Account approval, freeze/unfreeze, suspicious transaction flagging, and RBAC. |
-|  4   | PRAJWAL S HANGARAGI |   2462125    | 5BT CS (AIML) |     B   | Interest calculation, account statements, transfer limits, and testing support. |
+| Team Member | Register No. | Contribution |
+|---|---:|---|
+| NANDHITHA SRI V | 2462118 | Authentication, customer onboarding, account management, and project coordination. |
+| NEVITA SHARON Y | 2462121 | Beneficiary management, fund transfers, transaction ledger, and API testing. |
+| PAVANA MX | 2462178 | Account approval, freeze/unfreeze, suspicious transaction flagging, and RBAC. |
+| PRAJWAL S HANGARAGI | 2462125 | Interest calculation, account statements, transfer limits, and testing support. |
 
 ---
 
