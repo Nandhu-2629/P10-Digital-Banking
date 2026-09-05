@@ -33,6 +33,15 @@ staff monitoring features.
 
 ---
 
+## Problem Statement
+
+Traditional banking account and transaction processes require secure
+customer onboarding, account approval, beneficiary management, fund
+transfers and transaction tracking. The project addresses these requirements
+by providing a RESTful backend system for managing digital banking operations
+with authentication, authorization, validation, transaction controls and
+MongoDB-based data storage.
+
 ---
 
 ## Technologies Used
@@ -49,47 +58,10 @@ staff monitoring features.
 
 ---
 
-## Functional Modules
+## Setup Instructions
 
-The project implements 13 functional modules:
+### 1. Clone the Repository
 
-1. Customer Onboarding & KYC Capture
-2. Account Approval Workflow
-3. Account Management
-4. Beneficiary Management
-5. Fund Transfer Engine
-6. Transaction Ledger
-7. Account Statement Generation
-8. Minimum Balance & Transfer Limits
-9. Suspicious Transaction Flagging
-10. Account Freeze/Unfreeze
-11. Interest Calculation Job
-12. Staff Monitoring Dashboard
-13. Role-Based Access Control (RBAC)
-
----
-
-## Project Architecture
-
-The project follows an MVC-style backend architecture.
-
-```text
-Postman / Client
-       |
-       v
-Express Routes
-       |
-       v
-Validation Middleware
-       |
-       v
-JWT Authentication / RBAC
-       |
-       v
-Controllers
-       |
-       v
-Mongoose Models
-       |
-       v
-MongoDB Atlas
+```bash
+git clone https://github.com/Nandhu-2629/P10-Digital-Banking.git
+cd P10-Digital-Banking
