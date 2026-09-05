@@ -26,10 +26,12 @@ staff monitoring features.
 
 | Team Member | Register No. | Contribution |
 |---|---:|---|
-| NANDHITHA SRI V | 2462118 | Authentication, customer onboarding, account management, and project coordination. |
-| NEVITA SHARON Y | 2462121 | Beneficiary management, fund transfers, transaction ledger, and API testing. |
-| PAVANA MX | 2462178 | Account approval, freeze/unfreeze, suspicious transaction flagging, and RBAC. |
-| PRAJWAL S HANGARAGI | 2462125 | Interest calculation, account statements, transfer limits, and testing support. |
+| NANDHITHA SRI V | 2462118 | Backend development, project integration, GitHub management and documentation. |
+| NEVITA SHARON Y | 2462121 | API development, Postman testing and project documentation. |
+| PAVANA MX | 2462178 | Backend development, testing and PPT preparation. |
+| PRAJWAL S HANGARAGI | 2462125 | Project testing, report preparation and documentation support. |
+
+---
 
 ---
 
