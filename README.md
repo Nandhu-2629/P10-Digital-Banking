@@ -15,6 +15,18 @@
 
 ---
 
+### Team Member Contributions
+
+| Team Member | Register No. | Contribution |
+|---|---:|---|
+| NANDHITHA SRI V | 2462118 | Backend development, project integration, GitHub management and documentation. |
+| NEVITA SHARON Y | 2462121 | API development, Postman testing and project documentation. |
+| PAVANA MX | 2462178 | Backend development, testing and PPT preparation. |
+| PRAJWAL S HANGARAGI | 2462125 | Project testing, report preparation and documentation support. |
+
+---
+
+
 ## Problem Statement
 
 Traditional banking account and transaction processes require secure customer onboarding, account approval, beneficiary management, fund transfers and transaction tracking. The project addresses these requirements by providing a RESTful backend system for managing digital banking operations with authentication, authorization, validation, transaction controls and MongoDB-based data storage.
