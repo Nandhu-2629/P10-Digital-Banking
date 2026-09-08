@@ -15,14 +15,15 @@
 
 ---
 
-### Team Member Contributions
+
+## Team Member Contributions
 
 | Team Member | Register No. | Contribution |
 |---|---:|---|
-| NANDHITHA SRI V | 2462118 | Backend development, project integration, GitHub management and documentation. |
-| NEVITA SHARON Y | 2462121 | API development, Postman testing and project documentation. |
-| PAVANA MX | 2462178 | Backend development, testing and PPT preparation. |
-| PRAJWAL S HANGARAGI | 2462125 | Project testing, report preparation and documentation support. |
+| **NANDHITHA SRI V** | 2462118 | Customer Onboarding & KYC Capture, Account Approval Workflow, Account Management, Beneficiary Management |
+| **NEVITA SHARON Y** | 2462121 | Fund Transfer Engine, Transaction Ledger, Account Statement Generation, Minimum Balance & Limits Enforcement |
+| **PAVANA MX** | 2462178 | Suspicious Transaction Flagging, Account Freeze/Unfreeze Module, Interest Calculation Job Logic, Staff Monitoring Dashboard, Role-Based Access Control |
+| **PRAJWAL S HANGARAGI** | 2462125 | Database schema design, Postman testing, README, and PPT consolidation |
 
 ---
 
